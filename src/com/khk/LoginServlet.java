@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.khk.config.DbConnection;
 
@@ -41,7 +42,8 @@ public class LoginServlet extends HttpServlet {
 		 
 		 if(rs.next())
 		 {
-			
+			 		HttpSession session=request.getSession(true);
+			 		session.setAttribute("username", username);
 					RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
 					rd.forward(request, response);
 				}

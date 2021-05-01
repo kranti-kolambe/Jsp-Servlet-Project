@@ -28,9 +28,28 @@
 <!--===============================================================================================-->
 </head>
 <body>
-<script type="text/javascript">
-alert(${msg})
-</script>
+	<%
+		String msg = (String) request.getAttribute("msg");
+	if (msg != null) {
+	%>
+	<script type="text/javascript">
+ 		alert("${msg}");
+
+	</script>
+		<%
+			}
+		%>
+<%	String sendMail = (String) request.getAttribute("sendMail");
+	if (sendMail != null) {
+	%>
+	<script type="text/javascript">
+ 		alert("${sendMail}");
+
+	</script>
+		<%
+			}
+		%>
+
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-t-30 p-b-50">
@@ -50,9 +69,11 @@ alert(${msg})
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
-						<input type="submit" class="login100-form-btn"   value="Login">
-							
+					<input type="submit" class="login100-form-btn"   value="Login"></div>
+					<div><a href="forgetPsw.jsp">Forget Password</a>
+					<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
+					
 
 				</form>
 			</div>

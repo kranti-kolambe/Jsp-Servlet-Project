@@ -13,6 +13,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <% String username=(String)session.getAttribute("username"); %>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       
@@ -24,7 +25,7 @@
       </li>
     </ul>
     <span class="navbar-text">
-     Hi, User!!
+     welcome ${username}
     </span>
   </div>
 </nav>

@@ -9,9 +9,13 @@ public class DbConnection {
 	public static Connection getConnection() {
 		
      try {
-		Class.forName("com.mysql.jdbc.Driver");
-		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JspServletDB", "root", "");
-		System.out.println("Connection Done!!");
+    	 //if(con==null)
+    	// {
+    		 Class.forName("com.mysql.jdbc.Driver");
+    		 con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JspServletDB", "root", "");
+    		 System.out.println("Connection Done!!");
+    	 //}
+    	 
      	} catch (ClassNotFoundException e) {
 				e.printStackTrace();
      	} catch (SQLException e) {
