@@ -9,8 +9,9 @@ public class DbConnection {
 	public static Connection getConnection() {
 		
      try {
-    	 //if(con==null)
+    	 //if (jdbcConnection == null || jdbcConnection.isClosed()) {if(con==null)
     	// {
+    	 if (con == null || con.isClosed())
     		 Class.forName("com.mysql.jdbc.Driver");
     		 con=DriverManager.getConnection("jdbc:mysql://localhost:3306/JspServletDB", "root", "");
     		 System.out.println("Connection Done!!");

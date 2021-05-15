@@ -58,4 +58,5 @@ public class EmailMessage {
 	public static int getTextMsg() {
 		return TEXT_MSG;
 	}
+	
 }
